@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Intelligence & Analytics — OIL Intelligent Progress Bridge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FLOATING AI ASSISTANT OVERLAY (CSS-ONLY) -->
+  <input type="checkbox" id="ai-drawer-toggle" class="ai-drawer-toggle-input">
+  <label for="ai-drawer-toggle" class="floating-ai-btn">
+    <span class="ai-pulse-dot"></span>
+    Ask Project AI
+  </label>
+  
+  <div class="ai-side-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Ask Project AI (Prototype)</div>
+      <label for="ai-drawer-toggle" class="close-drawer-label">✕</label>
+    </div>
+    <div class="drawer-body">
+      <div class="badge badge-gold" style="align-self: center; margin-bottom: 10px;">Prototype AI Interface</div>
+      <div class="chat-bubble chat-user">What activities are delayed?</div>
+      <div class="chat-bubble chat-ai">
+        <strong>Project AI Assistant:</strong><br>
+        27 activities are currently delayed. 8 are marked critical. <strong>Piping</strong> has the highest number of delayed activities in Area A.
+      </div>
+      <div class="chat-bubble chat-user">Show schedule variance for Pipeline Line 24 welding.</div>
+      <div class="chat-bubble chat-ai">
+        Activity <strong>L6-1024</strong> completed on 06 Sep 2026 with a variance of <strong>+1 Day</strong> due to NDT inspection queuing.
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <div class="brand-wrapper">
+          <img src="assets/oil-logo.svg" alt="Oil India Limited" class="brand-logo-img">
+        </div>
+        <div class="sih-badge">SIH 2026 Prototype</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-title">Main Control</div>
+        <a href="dashboard.html" class="nav-link">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="site-input.html" class="nav-link">
+          <span class="nav-icon">✏️</span> Site Input
+        </a>
+        <a href="ai-matching.html" class="nav-link">
+          <span class="nav-icon">⚡</span> AI Matching
+        </a>
+        <a href="schedule.html" class="nav-link">
+          <span class="nav-icon">📅</span> Schedule
+        </a>
+        <a href="activity.html" class="nav-link">
+          <span class="nav-icon">🔍</span> Activities
+        </a>
+
+        <div class="nav-group-title" style="margin-top: 16px;">Governance & Analysis</div>
+        <a href="review.html" class="nav-link">
+          <span class="nav-icon">⚠️</span> Review Center
+          <span class="nav-count-badge">3</span>
+        </a>
+        <a href="analytics.html" class="nav-link active">
+          <span class="nav-icon">📈</span> Analytics
+        </a>
+        <a href="memory.html" class="nav-link">
+          <span class="nav-icon">🧠</span> Project Memory
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">AN</div>
+          <div class="user-info">
+            <span class="user-name">Project Intelligence</span>
+            <span class="user-role">Risk & Forecast Engine</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <h1 class="page-title">Project Intelligence</h1>
+          <div class="project-context-pill">
+            Understand progress, delays and schedule performance
+          </div>
+        </div>
+        <div class="header-right">
+          <span class="header-badge badge-synthetic">SYNTHETIC DEMO DATA</span>
+          <span class="header-badge badge-problem">SIH26122</span>
+        </div>
+      </header>
+
+      <div class="content-container">
+
+        <!-- PROJECTED COMPLETION FORECAST HERO CARD -->
+        <div class="card" style="background: linear-gradient(135deg, #0F2B48 0%, #051626 100%); color: #fff; border: 2px solid var(--oil-gold);">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <span class="badge badge-gold" style="margin-bottom: 8px;">Synthetic Demonstration</span>
+              <div style="font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.7); text-transform: uppercase;">
+                FORECASTED PROJECT COMPLETION DATE
+              </div>
+              <div style="font-size: 36px; font-weight: 900; color: var(--oil-gold-bright); margin-top: 4px;">
+                18 December 2026
+              </div>
+            </div>
+            <div style="text-align: right; background: rgba(255,255,255,0.05); padding: 16px 24px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1);">
+              <div style="font-size: 12px; color: rgba(255,255,255,0.8);">Baseline Completion: <strong>15 Dec 2026</strong></div>
+              <div style="font-size: 18px; font-weight: 900; color: var(--status-red); margin-top: 4px;">
+                Potential Variance: +3 Days
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-COLUMN ANALYTICS GRID -->
+        <div class="analytics-grid">
+          
+          <!-- PROGRESS TREND CHART -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">📈 Cumulative Progress S-Curve Trend</h3>
+              <span class="badge badge-blue">Planned vs Actual</span>
+            </div>
+            <div class="chart-container">
+              <div class="chart-axis-visual" style="height: 200px;">
+                <div class="chart-grid-line line-100">100%</div>
+                <div class="chart-grid-line line-75">75%</div>
+                <div class="chart-grid-line line-50">50%</div>
+                <div class="chart-grid-line line-25">25%</div>
+
+                <div class="chart-bars-group">
+                  <div class="bar bar-planned" style="height: 20%;"></div>
+                  <div class="bar bar-actual" style="height: 18%;"></div>
+                </div>
+                <div class="chart-bars-group">
+                  <div class="bar bar-planned" style="height: 35%;"></div>
+                  <div class="bar bar-actual" style="height: 37%;"></div>
+                </div>
+                <div class="chart-bars-group">
+                  <div class="bar bar-planned" style="height: 52%;"></div>
+                  <div class="bar bar-actual" style="height: 54%;"></div>
+                </div>
+                <div class="chart-bars-group">
+                  <div class="bar bar-planned" style="height: 61.8%;"></div>
+                  <div class="bar bar-actual" style="height: 64.2%;"></div>
+                </div>
+                <div class="chart-bars-group">
+                  <div class="bar bar-planned" style="height: 78%;"></div>
+                  <div class="bar bar-forecast" style="height: 75%;"></div>
+                </div>
+              </div>
+              <div class="chart-x-labels">
+                <span>Jun</span>
+                <span>Jul</span>
+                <span>Aug</span>
+                <span>Sep (Current)</span>
+                <span>Oct (Fcst)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DISCIPLINE PROGRESS -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">🏗️ Engineering Discipline Completion %</h3>
+              <span class="badge badge-gold">5 Disciplines</span>
+            </div>
+
+            <div class="discipline-progress-list">
+              <div class="discipline-row">
+                <div class="discipline-info">
+                  <span>Piping Engineering</span>
+                  <span style="color: var(--oil-navy);">82%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 82%;"></div>
+                </div>
+              </div>
+
+              <div class="discipline-row">
+                <div class="discipline-info">
+                  <span>Mechanical & Valves</span>
+                  <span style="color: var(--oil-navy);">74%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 74%;"></div>
+                </div>
+              </div>
+
+              <div class="discipline-row">
+                <div class="discipline-info">
+                  <span>Electrical Systems</span>
+                  <span style="color: var(--oil-navy);">68%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 68%;"></div>
+                </div>
+              </div>
+
+              <div class="discipline-row">
+                <div class="discipline-info">
+                  <span>Civil Foundations</span>
+                  <span style="color: var(--oil-navy);">61%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 61%;"></div>
+                </div>
+              </div>
+
+              <div class="discipline-row">
+                <div class="discipline-info">
+                  <span>Instrumentation & Telecom</span>
+                  <span style="color: var(--oil-navy);">53%</span>
+                </div>
+                <div class="progress-bar-track">
+                  <div class="progress-bar-fill" style="width: 53%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- DELAY HOTSPOTS GRID -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🔥 Delay Hotspots (Delayed Activities by Discipline)</h3>
+            <span class="badge badge-red">27 Total Delays</span>
+          </div>
+
+          <div class="hotspot-grid">
+            <div class="hotspot-card" style="border-top: 3px solid var(--status-red);">
+              <div class="hotspot-val">7</div>
+              <div style="font-weight: 700; font-size: 13px; color: var(--oil-navy);">Piping</div>
+              <div style="font-size: 10px; color: var(--text-muted);">Inspection Queuing</div>
+            </div>
+
+            <div class="hotspot-card" style="border-top: 3px solid var(--status-amber);">
+              <div class="hotspot-val" style="color: var(--status-amber);">5</div>
+              <div style="font-weight: 700; font-size: 13px; color: var(--oil-navy);">Civil</div>
+              <div style="font-size: 10px; color: var(--text-muted);">Monsoon Rain Grounding</div>
+            </div>
+
+            <div class="hotspot-card" style="border-top: 3px solid var(--status-amber);">
+              <div class="hotspot-val" style="color: var(--status-amber);">4</div>
+              <div style="font-weight: 700; font-size: 13px; color: var(--oil-navy);">Mechanical</div>
+              <div style="font-size: 10px; color: var(--text-muted);">Valve Dispatch Lag</div>
+            </div>
+
+            <div class="hotspot-card" style="border-top: 3px solid var(--status-blue);">
+              <div class="hotspot-val" style="color: var(--status-blue);">3</div>
+              <div style="font-weight: 700; font-size: 13px; color: var(--oil-navy);">Electrical</div>
+              <div style="font-size: 10px; color: var(--text-muted);">Cable Tray Clearances</div>
+            </div>
+
+            <div class="hotspot-card" style="border-top: 3px solid var(--border-medium);">
+              <div class="hotspot-val" style="color: var(--text-muted);">2</div>
+              <div style="font-weight: 700; font-size: 13px; color: var(--oil-navy);">Instrumentation</div>
+              <div style="font-size: 10px; color: var(--text-muted);">Transmitter Calibration</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

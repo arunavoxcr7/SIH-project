@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OIL Intelligent Progress Bridge — AI-Powered Planning-to-Execution Prototype</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Landing page full-width header override */
+    .landing-header {
+      height: 80px;
+      background-color: var(--oil-navy-dark);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .landing-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .landing-nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 600;
+      font-size: 14px;
+      transition: color var(--transition-fast);
+    }
+    .landing-nav-link:hover {
+      color: var(--oil-gold-bright);
+    }
+    .hero-section {
+      background: radial-gradient(circle at 50% 20%, #0F2B48 0%, #071626 100%);
+      color: var(--text-white);
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--oil-navy-light);
+    }
+    .hero-title {
+      font-size: 44px;
+      font-weight: 900;
+      color: var(--text-white);
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .hero-title span {
+      color: var(--oil-gold-bright);
+    }
+    .hero-subtitle {
+      font-size: 20px;
+      color: var(--oil-gold);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero-description {
+      max-width: 760px;
+      margin: 0 auto 40px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+    .landing-pipeline-box {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(19, 39, 64, 0.7);
+      border: 1px solid var(--oil-gold-border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+    }
+    .features-section {
+      padding: 70px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--oil-navy);
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .pillar-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-top: 4px solid var(--oil-navy);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-top-color: var(--oil-gold);
+    }
+    .pillar-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background-color: var(--bg-card-alt);
+      color: var(--oil-navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .pillar-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--oil-navy-dark);
+      margin-bottom: 10px;
+    }
+    .pillar-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .sih-info-banner {
+      max-width: 1200px;
+      margin: 0 auto 70px;
+      background: var(--oil-navy-dark);
+      border: 1px solid var(--oil-gold-border);
+      border-radius: var(--radius-lg);
+      padding: 32px 40px;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FLOATING AI ASSISTANT OVERLAY (CSS-ONLY) -->
+  <input type="checkbox" id="ai-drawer-toggle" class="ai-drawer-toggle-input">
+  <label for="ai-drawer-toggle" class="floating-ai-btn">
+    <span class="ai-pulse-dot"></span>
+    Ask Project AI
+  </label>
+  
+  <div class="ai-side-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Ask Project AI (Prototype)</div>
+      <label for="ai-drawer-toggle" class="close-drawer-label">✕</label>
+    </div>
+    <div class="drawer-body">
+      <div class="badge badge-gold" style="align-self: center; margin-bottom: 10px;">Prototype AI Interface</div>
+      <div class="chat-bubble chat-user">What activities are delayed?</div>
+      <div class="chat-bubble chat-ai">
+        <strong>Project AI Assistant:</strong><br>
+        27 activities are currently delayed. 8 are marked critical. <strong>Piping</strong> has the highest number of delayed activities in Area A.
+      </div>
+      <div class="chat-bubble chat-user">Show schedule variance for Pipeline Line 24 welding.</div>
+      <div class="chat-bubble chat-ai">
+        Activity <strong>L6-1024</strong> completed on 06 Sep 2026 with a variance of <strong>+1 Day</strong> due to NDT inspection queuing.
+      </div>
+    </div>
+  </div>
+
+  <!-- LANDING NAVIGATION HEADER -->
+  <header class="landing-header">
+    <div class="brand-wrapper">
+      <img src="assets/oil-logo.svg" alt="Oil India Limited" class="brand-logo-img">
+    </div>
+    <nav class="landing-nav">
+      <a href="dashboard.html" class="landing-nav-link">Dashboard</a>
+      <a href="ai-matching.html" class="landing-nav-link">How It Works</a>
+      <a href="schedule.html" class="landing-nav-link">Schedule</a>
+      <a href="analytics.html" class="landing-nav-link">Analytics</a>
+      <a href="dashboard.html" class="btn btn-gold btn-sm">Explore Prototype</a>
+    </nav>
+    <div class="sih-badge">
+      SIH 2026 Prototype • Problem SIH26122
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="sih-badge" style="margin: 0 auto 16px;">
+      Oil India Limited • Smart Automation Category
+    </div>
+    <h1 class="hero-title">OIL Intelligent <span>Progress Bridge</span></h1>
+    <div class="hero-subtitle">AI-Powered Planning-to-Execution Bridge</div>
+    <p class="hero-description">
+      Connect what was planned with what is actually happening at the project site. 
+      Transform fragmented site reports, daily progress updates, and field observations into structured project intelligence linked to Primavera L5/L6 schedule activities.
+    </p>
+
+    <div class="hero-actions">
+      <a href="dashboard.html" class="btn btn-gold" style="padding: 14px 28px; font-size: 15px;">
+        ⚡ Explore Prototype
+      </a>
+      <a href="ai-matching.html" class="btn btn-secondary" style="padding: 14px 28px; font-size: 15px; color: var(--text-white); background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+        🔍 See How It Works
+      </a>
+    </div>
+
+    <!-- RECURRING VISUAL WORKFLOW PIPELINE -->
+    <div class="landing-pipeline-box">
+      <div class="pipeline-header">
+        <span class="pipeline-title">PROJECT PIPELINE FLOW</span>
+        <span class="badge badge-gold">Planning-to-Execution Linkage</span>
+      </div>
+      <div class="pipeline-flow">
+        <div class="pipeline-step">
+          <div class="step-node active">1</div>
+          <div class="step-title">SITE UPDATE</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">DPR / Site Diary</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="pipeline-step">
+          <div class="step-node">2</div>
+          <div class="step-title">STRUCTURED DATA</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">NLP & Entity Extraction</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="pipeline-step">
+          <div class="step-node">3</div>
+          <div class="step-title">L5/L6 MATCH</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">WBS & Discipline Check</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="pipeline-step">
+          <div class="step-node">4</div>
+          <div class="step-title">VERIFICATION</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">96% Confidence Approval</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="pipeline-step">
+          <div class="step-node">5</div>
+          <div class="step-title">INTELLIGENCE</div>
+          <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">Updated Risk & Progress</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE FEATURE PILLARS -->
+  <section class="features-section">
+    <div class="section-heading">
+      <h2 class="section-title">Core Capability Pillars</h2>
+      <div class="section-sub">Engineered for Oil & Gas Enterprise Project Control Teams</div>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">📥</div>
+        <h3 class="pillar-title">Capture</h3>
+        <p class="pillar-text">
+          Collect fragmented site progress information from daily reports (PDF/Excel), text updates, and supervisor field updates without manual data re-entry.
+        </p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">🔗</div>
+        <h3 class="pillar-title">Connect</h3>
+        <p class="pillar-text">
+          Link unstructured real-world updates directly to planned Primavera P6 L5/L6 activities with explicit WBS, discipline, and location context.
+        </p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">🛡️</div>
+        <h3 class="pillar-title">Control</h3>
+        <p class="pillar-text">
+          Understand actual progress, identify delay hotspots early, resolve evidence conflicts, and protect project timelines with actionable analytics.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIH PROBLEM STATEMENT BANNER -->
+  <div class="sih-info-banner">
+    <div>
+      <div style="font-size: 12px; color: var(--oil-gold-bright); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+        Smart India Hackathon 2026 Problem Statement
+      </div>
+      <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 6px;">
+        SIH26122 — Oil India Limited (OIL)
+      </h3>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.8);">
+        Category: Software — Smart Automation • Visual Frontend Prototype
+      </p>
+    </div>
+    <a href="dashboard.html" class="btn btn-gold" style="white-space: nowrap;">
+      Launch Control Center →
+    </a>
+  </div>
+
+  <footer style="text-align: center; padding: 24px; color: var(--text-muted); font-size: 12px; border-top: 1px solid var(--border-light);">
+    © 2026 Oil India Limited • SIH 2026 Prototype Demonstration • Pipeline Expansion Project — Phase II
+  </footer>
+
+</body>
+</html>

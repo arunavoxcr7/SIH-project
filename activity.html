@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Detail L6-1024 — OIL Intelligent Progress Bridge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FLOATING AI ASSISTANT OVERLAY (CSS-ONLY) -->
+  <input type="checkbox" id="ai-drawer-toggle" class="ai-drawer-toggle-input">
+  <label for="ai-drawer-toggle" class="floating-ai-btn">
+    <span class="ai-pulse-dot"></span>
+    Ask Project AI
+  </label>
+  
+  <div class="ai-side-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Ask Project AI (Prototype)</div>
+      <label for="ai-drawer-toggle" class="close-drawer-label">✕</label>
+    </div>
+    <div class="drawer-body">
+      <div class="badge badge-gold" style="align-self: center; margin-bottom: 10px;">Prototype AI Interface</div>
+      <div class="chat-bubble chat-user">What activities are delayed?</div>
+      <div class="chat-bubble chat-ai">
+        <strong>Project AI Assistant:</strong><br>
+        27 activities are currently delayed. 8 are marked critical. <strong>Piping</strong> has the highest number of delayed activities in Area A.
+      </div>
+      <div class="chat-bubble chat-user">Show schedule variance for Pipeline Line 24 welding.</div>
+      <div class="chat-bubble chat-ai">
+        Activity <strong>L6-1024</strong> completed on 06 Sep 2026 with a variance of <strong>+1 Day</strong> due to NDT inspection queuing.
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <div class="brand-wrapper">
+          <img src="assets/oil-logo.svg" alt="Oil India Limited" class="brand-logo-img">
+        </div>
+        <div class="sih-badge">SIH 2026 Prototype</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-title">Main Control</div>
+        <a href="dashboard.html" class="nav-link">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="site-input.html" class="nav-link">
+          <span class="nav-icon">✏️</span> Site Input
+        </a>
+        <a href="ai-matching.html" class="nav-link">
+          <span class="nav-icon">⚡</span> AI Matching
+        </a>
+        <a href="schedule.html" class="nav-link">
+          <span class="nav-icon">📅</span> Schedule
+        </a>
+        <a href="activity.html" class="nav-link active">
+          <span class="nav-icon">🔍</span> Activities
+        </a>
+
+        <div class="nav-group-title" style="margin-top: 16px;">Governance & Analysis</div>
+        <a href="review.html" class="nav-link">
+          <span class="nav-icon">⚠️</span> Review Center
+          <span class="nav-count-badge">3</span>
+        </a>
+        <a href="analytics.html" class="nav-link">
+          <span class="nav-icon">📈</span> Analytics
+        </a>
+        <a href="memory.html" class="nav-link">
+          <span class="nav-icon">🧠</span> Project Memory
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">PE</div>
+          <div class="user-info">
+            <span class="user-name">Project Engineer</span>
+            <span class="user-role">Piping & Integrity Division</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <h1 class="page-title">Activity Detail & Audit Trail</h1>
+          <div class="project-context-pill">
+            WBS: <strong>1.2.4 — Pipeline Construction</strong> | Discipline: <strong>Piping</strong>
+          </div>
+        </div>
+        <div class="header-right">
+          <span class="header-badge badge-synthetic">SYNTHETIC DEMO DATA</span>
+          <span class="header-badge badge-problem">SIH26122</span>
+        </div>
+      </header>
+
+      <div class="content-container">
+
+        <!-- ACTIVITY HEADER CARD -->
+        <div class="card" style="border-left: 5px solid var(--oil-gold);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <div>
+              <span style="font-family: monospace; font-size: 14px; font-weight: 800; color: var(--oil-gold-bright); background: var(--oil-navy); padding: 4px 10px; border-radius: var(--radius-sm);">L6-1024</span>
+              <h2 style="font-size: 22px; font-weight: 900; color: var(--oil-navy-dark); margin-top: 8px;">
+                Welding of Pipeline Line 24
+              </h2>
+            </div>
+            <div style="text-align: right;">
+              <span class="badge badge-green" style="font-size: 13px; padding: 6px 14px;">Status: Completed</span>
+              <div style="font-size: 20px; font-weight: 900; color: var(--oil-navy); margin-top: 4px;">Progress: 100%</div>
+            </div>
+          </div>
+
+          <!-- PLANNED VS ACTUAL BOX -->
+          <div class="date-comparison-box">
+            <div>
+              <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">PLANNED DATES</div>
+              <div class="date-val">01 Sep → 05 Sep 2026</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">ACTUAL DATES</div>
+              <div class="date-val" style="color: var(--status-green);">02 Sep → 06 Sep 2026</div>
+            </div>
+            <div>
+              <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">SCHEDULE VARIANCE</div>
+              <div class="date-val" style="color: var(--status-amber);">+1 Day Variance</div>
+            </div>
+          </div>
+
+          <!-- PROGRESS TIMELINE VISUAL -->
+          <div style="margin-top: 24px;">
+            <div style="font-size: 12px; font-weight: 700; color: var(--oil-navy); margin-bottom: 8px;">
+              TIMELINE MILESTONE TRACKING
+            </div>
+            <div class="visual-timeline-track">
+              <div class="timeline-milestone">
+                <div class="milestone-dot done"></div>
+                <div class="milestone-label">Planned Start<br><strong>01 Sep</strong></div>
+              </div>
+
+              <div class="timeline-milestone">
+                <div class="milestone-dot done"></div>
+                <div class="milestone-label">Actual Start<br><strong style="color: var(--status-amber);">02 Sep (+1d)</strong></div>
+              </div>
+
+              <div class="timeline-milestone">
+                <div class="milestone-dot done"></div>
+                <div class="milestone-label">Planned Finish<br><strong>05 Sep</strong></div>
+              </div>
+
+              <div class="timeline-milestone">
+                <div class="milestone-dot done"></div>
+                <div class="milestone-label">Actual Finish<br><strong style="color: var(--status-green);">06 Sep (Verified)</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-COLUMN DETAILS GRID -->
+        <div class="activity-detail-grid">
+          
+          <!-- SOURCE EVIDENCE CARD -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">📄 Source Evidence Verification</h3>
+              <span class="badge badge-gold">Verified DPR</span>
+            </div>
+            <div style="background-color: var(--bg-card-alt); border-left: 3px solid var(--oil-navy); padding: 16px; border-radius: var(--radius-sm); margin-bottom: 16px;">
+              <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 4px;">
+                DAILY PROGRESS REPORT — 06 SEPTEMBER 2026
+              </div>
+              <p style="font-size: 14px; font-weight: 700; color: var(--oil-navy-dark);">
+                "Pipeline Line 24 welding completed today."
+              </p>
+            </div>
+            <div style="font-size: 12px; color: var(--text-muted); line-height: 1.6;">
+              Submitted by: <strong>Field Supervisor (Piping Sector 4)</strong><br>
+              Document Hash: <code>#DPR-2026-0906-8821</code><br>
+              Attachment: <code>welding_inspection_line24.pdf</code> (Verified 100% Complete)
+            </div>
+          </div>
+
+          <!-- AI MATCHING METRICS CARD -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">⚡ AI Match Rationale & Confidence</h3>
+              <span class="badge badge-green">96% High Confidence</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+              <div style="padding: 10px; background: var(--status-green-bg); border: 1px solid var(--status-green-border); border-radius: var(--radius-sm); font-size: 12px;">
+                <strong style="color: #065F46;">✓ Activity Match</strong><br>Semantic similarity 99%
+              </div>
+              <div style="padding: 10px; background: var(--status-green-bg); border: 1px solid var(--status-green-border); border-radius: var(--radius-sm); font-size: 12px;">
+                <strong style="color: #065F46;">✓ Location Match</strong><br>Pipeline Line 24 (Area A)
+              </div>
+              <div style="padding: 10px; background: var(--status-green-bg); border: 1px solid var(--status-green-border); border-radius: var(--radius-sm); font-size: 12px;">
+                <strong style="color: #065F46;">✓ Discipline Match</strong><br>Piping Engineering
+              </div>
+              <div style="padding: 10px; background: var(--status-green-bg); border: 1px solid var(--status-green-border); border-radius: var(--radius-sm); font-size: 12px;">
+                <strong style="color: #065F46;">✓ Context Match</strong><br>WBS 1.2.4 Hierarchy
+              </div>
+            </div>
+            <div style="font-size: 12px; color: var(--text-muted);">
+              Verified by Human Planner: <strong>Approved by Sr. Control Engineer on 06 Sep 2026 16:45</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- DEPENDENCIES NETWORK -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🔗 Activity Predecessor & Successor Dependencies</h3>
+            <span class="badge badge-blue">Primavera Network</span>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; position: relative; padding: 20px 40px; background: var(--bg-card-alt); border-radius: var(--radius-md);">
+            <!-- PREDECESSOR -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 16px; width: 220px; text-align: center;">
+              <span class="badge badge-green" style="margin-bottom: 6px;">Predecessor ✓</span>
+              <div style="font-family: monospace; font-weight: 800; color: var(--oil-navy);">L6-1018</div>
+              <div style="font-weight: 700; font-size: 12px;">Pipe Alignment Line 24</div>
+              <div style="font-size: 10px; color: var(--status-green); font-weight: 700; margin-top: 4px;">Completed 31 Aug</div>
+            </div>
+
+            <div style="font-size: 24px; color: var(--oil-gold); font-weight: 900;">➔</div>
+
+            <!-- CURRENT -->
+            <div style="background: var(--oil-navy); color: #fff; border: 2px solid var(--oil-gold); border-radius: var(--radius-md); padding: 16px; width: 240px; text-align: center; box-shadow: var(--shadow-md);">
+              <span class="badge badge-gold" style="margin-bottom: 6px;">Current Activity</span>
+              <div style="font-family: monospace; font-weight: 900; color: var(--oil-gold-bright);">L6-1024</div>
+              <div style="font-weight: 800; font-size: 13px;">Welding Pipeline Line 24</div>
+              <div style="font-size: 11px; color: var(--status-green); font-weight: 700; margin-top: 4px;">100% Completed</div>
+            </div>
+
+            <div style="font-size: 24px; color: var(--oil-gold); font-weight: 900;">➔</div>
+
+            <!-- SUCCESSOR -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border-medium); border-radius: var(--radius-md); padding: 16px; width: 220px; text-align: center;">
+              <span class="badge badge-blue" style="margin-bottom: 6px;">Successor Next</span>
+              <div style="font-family: monospace; font-weight: 800; color: var(--oil-navy);">L6-1088</div>
+              <div style="font-weight: 700; font-size: 12px;">Hydro Testing Area A</div>
+              <div style="font-size: 10px; color: var(--status-blue); font-weight: 700; margin-top: 4px;">Ready to Start</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

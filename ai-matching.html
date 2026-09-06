@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Schedule Matching — OIL Intelligent Progress Bridge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FLOATING AI ASSISTANT OVERLAY (CSS-ONLY) -->
+  <input type="checkbox" id="ai-drawer-toggle" class="ai-drawer-toggle-input">
+  <label for="ai-drawer-toggle" class="floating-ai-btn">
+    <span class="ai-pulse-dot"></span>
+    Ask Project AI
+  </label>
+  
+  <div class="ai-side-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Ask Project AI (Prototype)</div>
+      <label for="ai-drawer-toggle" class="close-drawer-label">✕</label>
+    </div>
+    <div class="drawer-body">
+      <div class="badge badge-gold" style="align-self: center; margin-bottom: 10px;">Prototype AI Interface</div>
+      <div class="chat-bubble chat-user">What activities are delayed?</div>
+      <div class="chat-bubble chat-ai">
+        <strong>Project AI Assistant:</strong><br>
+        27 activities are currently delayed. 8 are marked critical. <strong>Piping</strong> has the highest number of delayed activities in Area A.
+      </div>
+      <div class="chat-bubble chat-user">Show schedule variance for Pipeline Line 24 welding.</div>
+      <div class="chat-bubble chat-ai">
+        Activity <strong>L6-1024</strong> completed on 06 Sep 2026 with a variance of <strong>+1 Day</strong> due to NDT inspection queuing.
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <div class="brand-wrapper">
+          <img src="assets/oil-logo.svg" alt="Oil India Limited" class="brand-logo-img">
+        </div>
+        <div class="sih-badge">SIH 2026 Prototype</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-title">Main Control</div>
+        <a href="dashboard.html" class="nav-link">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="site-input.html" class="nav-link">
+          <span class="nav-icon">✏️</span> Site Input
+        </a>
+        <a href="ai-matching.html" class="nav-link active">
+          <span class="nav-icon">⚡</span> AI Matching
+        </a>
+        <a href="schedule.html" class="nav-link">
+          <span class="nav-icon">📅</span> Schedule
+        </a>
+        <a href="activity.html" class="nav-link">
+          <span class="nav-icon">🔍</span> Activities
+        </a>
+
+        <div class="nav-group-title" style="margin-top: 16px;">Governance & Analysis</div>
+        <a href="review.html" class="nav-link">
+          <span class="nav-icon">⚠️</span> Review Center
+          <span class="nav-count-badge">3</span>
+        </a>
+        <a href="analytics.html" class="nav-link">
+          <span class="nav-icon">📈</span> Analytics
+        </a>
+        <a href="memory.html" class="nav-link">
+          <span class="nav-icon">🧠</span> Project Memory
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">AI</div>
+          <div class="user-info">
+            <span class="user-name">AI Matching Engine</span>
+            <span class="user-role">NLP Entity Linker v2.6</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <h1 class="page-title">AI Schedule Matching</h1>
+          <div class="project-context-pill">
+            Connecting site reality to the correct L5/L6 schedule activity
+          </div>
+        </div>
+        <div class="header-right">
+          <span class="header-badge badge-synthetic">SYNTHETIC DEMO DATA</span>
+          <span class="header-badge badge-problem">SIH26122</span>
+        </div>
+      </header>
+
+      <div class="content-container">
+
+        <!-- TWO-COLUMN LAYOUT: SITE REPORT vs EXTRACTED EVENT -->
+        <div class="matching-hero-grid">
+          
+          <!-- LEFT: UNSTRUCTURED SITE REPORT -->
+          <div class="card" style="border-left: 4px solid var(--oil-gold);">
+            <div class="card-header">
+              <h3 class="card-title">📝 Site Report (Unstructured Raw Input)</h3>
+              <span class="badge badge-gold">Input Evidence</span>
+            </div>
+            <blockquote style="font-size: 16px; font-weight: 700; color: var(--oil-navy-dark); line-height: 1.5; padding: 16px; background-color: var(--bg-card-alt); border-left: 3px solid var(--oil-navy); border-radius: var(--radius-sm); margin-bottom: 16px;">
+              "Pipeline Line 24 welding completed today."
+            </blockquote>
+            <div style="display: flex; gap: 20px; font-size: 12px; color: var(--text-muted);">
+              <div>Source: <strong>Daily Progress Report (DPR)</strong></div>
+              <div>Date: <strong>06 September 2026</strong></div>
+              <div>Location: <strong>Sector 4 / Area A</strong></div>
+            </div>
+          </div>
+
+          <!-- RIGHT: EXTRACTED STRUCTURED EVENT -->
+          <div class="card" style="border-left: 4px solid var(--status-green);">
+            <div class="card-header">
+              <h3 class="card-title">⚡ Structured Event (Extracted Intelligence)</h3>
+              <span class="badge badge-green">NLP Parsed</span>
+            </div>
+            <div class="extracted-field-list">
+              <div class="field-item">
+                <span class="field-label">Action / Activity</span>
+                <span class="field-value">Welding</span>
+              </div>
+              <div class="field-item">
+                <span class="field-label">Location / Sub-System</span>
+                <span class="field-value">Pipeline Line 24</span>
+              </div>
+              <div class="field-item">
+                <span class="field-label">Engineering Discipline</span>
+                <span class="field-value">Piping</span>
+              </div>
+              <div class="field-item">
+                <span class="field-label">Execution Status</span>
+                <span class="field-value" style="color: var(--status-green);">Completed</span>
+              </div>
+              <div class="field-item">
+                <span class="field-label">Actual Finish Date</span>
+                <span class="field-value">06 Sep 2026</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- MATCH RESULT CARD (HIGH CONFIDENCE HERO RESULT) -->
+        <div class="match-result-card">
+          <div class="match-grid">
+            
+            <!-- MATCH DETAILS -->
+            <div>
+              <div class="match-badge-header">🎯 BEST SCHEDULE MATCH IDENTIFIED</div>
+              <div class="matched-code">L6-1024</div>
+              <div class="matched-title">Welding of Pipeline Line 24</div>
+              
+              <div class="matched-meta-grid">
+                <div>WBS Code: <strong style="color:#fff;">1.2.4</strong></div>
+                <div>Discipline: <strong style="color:#fff;">Piping</strong></div>
+                <div>Location: <strong style="color:#fff;">Area A / Line 24</strong></div>
+              </div>
+            </div>
+
+            <!-- CONFIDENCE GAUGE -->
+            <div class="confidence-ring-box">
+              <div class="confidence-circle">
+                <div class="confidence-inner">
+                  <div class="confidence-number">96%</div>
+                  <div class="confidence-text">CONFIDENCE</div>
+                </div>
+              </div>
+              <span class="badge badge-green" style="font-size: 12px; padding: 4px 12px;">HIGH CONFIDENCE MATCH</span>
+            </div>
+
+          </div>
+
+          <!-- RATIONALE CHECKLIST -->
+          <div class="rationale-list">
+            <div class="rationale-item"><span>✓</span> Activity similarity match (99%)</div>
+            <div class="rationale-item"><span>✓</span> Location context match (Area A)</div>
+            <div class="rationale-item"><span>✓</span> Discipline match (Piping)</div>
+            <div class="rationale-item"><span>✓</span> WBS hierarchy context match</div>
+            <div class="rationale-item"><span>✓</span> Predecessor NDT sequence valid</div>
+            <div class="rationale-item"><span>✓</span> Schedule status alignment</div>
+          </div>
+
+          <div style="display: flex; gap: 16px; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <a href="activity.html" class="btn btn-gold" style="padding: 12px 24px;">
+              ✓ APPROVE & UPDATE SCHEDULE
+            </a>
+            <a href="review.html" class="btn btn-secondary" style="color: #fff; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);">
+              🔍 REVIEW MANUALLY
+            </a>
+          </div>
+        </div>
+
+        <!-- LOW CONFIDENCE EXAMPLE (HUMAN-IN-THE-LOOP DEMONSTRATION) -->
+        <div class="low-confidence-section">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <h3 style="font-size: 16px; font-weight: 800; color: #92400E; display: flex; align-items: center; gap: 8px;">
+              ⚠️ Planner Review Required (Low Confidence Example)
+            </h3>
+            <span class="badge badge-amber">Human-in-the-Loop</span>
+          </div>
+
+          <p style="font-size: 13px; color: #78350F; margin-bottom: 12px;">
+            Site update: <strong>"Valve work completed near Unit 3."</strong>
+          </p>
+
+          <div style="font-size: 11px; font-weight: 700; color: var(--status-amber); margin-bottom: 8px;">
+            AI confidence is insufficient for automatic confirmation (Threshold: 85%). Multiple candidate activities detected:
+          </div>
+
+          <div class="candidate-list">
+            <div class="candidate-card">
+              <div>
+                <span class="candidate-title">L6-3021 — Valve Installation (Unit 3)</span>
+                <div style="font-size: 11px; color: var(--text-muted);">Discipline: Mechanical | Area: Unit 3</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <span class="badge badge-amber" style="font-size: 12px;">61% Match</span>
+                <a href="review.html" class="btn btn-primary btn-sm">SELECT ACTIVITY</a>
+              </div>
+            </div>
+
+            <div class="candidate-card">
+              <div>
+                <span class="candidate-title">L6-3028 — Valve Testing & Pressure Check</span>
+                <div style="font-size: 11px; color: var(--text-muted);">Discipline: Mechanical | Area: Unit 3</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <span class="badge badge-amber" style="font-size: 12px;">57% Match</span>
+                <a href="review.html" class="btn btn-secondary btn-sm">SELECT ACTIVITY</a>
+              </div>
+            </div>
+
+            <div class="candidate-card">
+              <div>
+                <span class="candidate-title">L5-3019 — Valve Preparation & Gasket Alignment</span>
+                <div style="font-size: 11px; color: var(--text-muted);">Discipline: Mechanical | Area: Unit 3</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <span class="badge badge-amber" style="font-size: 12px;">42% Match</span>
+                <a href="review.html" class="btn btn-secondary btn-sm">SELECT ACTIVITY</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

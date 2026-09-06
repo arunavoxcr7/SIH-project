@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Review Center — OIL Intelligent Progress Bridge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FLOATING AI ASSISTANT OVERLAY (CSS-ONLY) -->
+  <input type="checkbox" id="ai-drawer-toggle" class="ai-drawer-toggle-input">
+  <label for="ai-drawer-toggle" class="floating-ai-btn">
+    <span class="ai-pulse-dot"></span>
+    Ask Project AI
+  </label>
+  
+  <div class="ai-side-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Ask Project AI (Prototype)</div>
+      <label for="ai-drawer-toggle" class="close-drawer-label">✕</label>
+    </div>
+    <div class="drawer-body">
+      <div class="badge badge-gold" style="align-self: center; margin-bottom: 10px;">Prototype AI Interface</div>
+      <div class="chat-bubble chat-user">What activities are delayed?</div>
+      <div class="chat-bubble chat-ai">
+        <strong>Project AI Assistant:</strong><br>
+        27 activities are currently delayed. 8 are marked critical. <strong>Piping</strong> has the highest number of delayed activities in Area A.
+      </div>
+      <div class="chat-bubble chat-user">Show schedule variance for Pipeline Line 24 welding.</div>
+      <div class="chat-bubble chat-ai">
+        Activity <strong>L6-1024</strong> completed on 06 Sep 2026 with a variance of <strong>+1 Day</strong> due to NDT inspection queuing.
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <div class="brand-wrapper">
+          <img src="assets/oil-logo.svg" alt="Oil India Limited" class="brand-logo-img">
+        </div>
+        <div class="sih-badge">SIH 2026 Prototype</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-title">Main Control</div>
+        <a href="dashboard.html" class="nav-link">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="site-input.html" class="nav-link">
+          <span class="nav-icon">✏️</span> Site Input
+        </a>
+        <a href="ai-matching.html" class="nav-link">
+          <span class="nav-icon">⚡</span> AI Matching
+        </a>
+        <a href="schedule.html" class="nav-link">
+          <span class="nav-icon">📅</span> Schedule
+        </a>
+        <a href="activity.html" class="nav-link">
+          <span class="nav-icon">🔍</span> Activities
+        </a>
+
+        <div class="nav-group-title" style="margin-top: 16px;">Governance & Analysis</div>
+        <a href="review.html" class="nav-link active">
+          <span class="nav-icon">⚠️</span> Review Center
+          <span class="nav-count-badge">3</span>
+        </a>
+        <a href="analytics.html" class="nav-link">
+          <span class="nav-icon">📈</span> Analytics
+        </a>
+        <a href="memory.html" class="nav-link">
+          <span class="nav-icon">🧠</span> Project Memory
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">QA</div>
+          <div class="user-info">
+            <span class="user-name">Lead Reviewer</span>
+            <span class="user-role">Project Control & Verification</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <h1 class="page-title">AI Review Center</h1>
+          <div class="project-context-pill">
+            Resolve uncertain, conflicting and unmatched site updates
+          </div>
+        </div>
+        <div class="header-right">
+          <span class="header-badge badge-synthetic">SYNTHETIC DEMO DATA</span>
+          <span class="header-badge badge-problem">SIH26122</span>
+        </div>
+      </header>
+
+      <div class="content-container">
+
+        <!-- PURE CSS TABS SYSTEM -->
+        <div class="css-tabs-wrapper">
+          
+          <!-- Radio controllers -->
+          <input type="radio" id="tab1" name="review-tab" class="tab-radio" checked>
+          <input type="radio" id="tab2" name="review-tab" class="tab-radio">
+          <input type="radio" id="tab3" name="review-tab" class="tab-radio">
+
+          <!-- Tab labels header -->
+          <div class="tab-headers">
+            <label for="tab1" class="tab-btn">⚠️ Needs Review (1)</label>
+            <label for="tab2" class="tab-btn">🚨 Conflicts (1)</label>
+            <label for="tab3" class="tab-btn">❓ Unmatched (1)</label>
+          </div>
+
+          <!-- Tab Content Panels -->
+          <div class="tab-panels">
+            
+            <!-- PANEL 1: NEEDS REVIEW -->
+            <div id="panel1" class="tab-content-panel">
+              <div class="card">
+                <div class="card-header">
+                  <div>
+                    <h3 class="card-title">Low Confidence Update Candidate Selection</h3>
+                    <div class="card-subtitle">AI confidence below 85% threshold — Planner intervention required</div>
+                  </div>
+                  <span class="badge badge-amber">68% Max Confidence</span>
+                </div>
+
+                <div style="background-color: var(--bg-card-alt); border-left: 3px solid var(--status-amber); padding: 16px; border-radius: var(--radius-sm); margin-bottom: 20px;">
+                  <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">RECEIVED SITE UPDATE</div>
+                  <p style="font-size: 15px; font-weight: 800; color: var(--oil-navy-dark); margin-top: 4px;">
+                    "Valve work completed near Unit 3."
+                  </p>
+                  <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Source: Field Diary 06 Sep 2026</div>
+                </div>
+
+                <div style="font-size: 13px; font-weight: 700; color: var(--oil-navy); margin-bottom: 12px;">
+                  Candidate Primavera Activities:
+                </div>
+
+                <div class="candidate-list">
+                  <div class="candidate-card" style="border-left: 3px solid var(--oil-navy);">
+                    <div>
+                      <div class="candidate-title">L6-3021 — Valve Installation (Unit 3)</div>
+                      <div style="font-size: 11px; color: var(--text-muted);">Mechanical Discipline • WBS 1.3.2</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span class="badge badge-amber">61% Match</span>
+                      <a href="activity.html" class="btn btn-gold btn-sm">Select Match</a>
+                      <button class="btn btn-secondary btn-sm" style="color: var(--status-red);">Reject</button>
+                    </div>
+                  </div>
+
+                  <div class="candidate-card">
+                    <div>
+                      <div class="candidate-title">L6-3028 — Valve Testing & Pressure Check</div>
+                      <div style="font-size: 11px; color: var(--text-muted);">Mechanical Discipline • WBS 1.3.2</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span class="badge badge-amber">57% Match</span>
+                      <a href="activity.html" class="btn btn-secondary btn-sm">Select Match</a>
+                      <button class="btn btn-secondary btn-sm" style="color: var(--status-red);">Reject</button>
+                    </div>
+                  </div>
+
+                  <div class="candidate-card">
+                    <div>
+                      <div class="candidate-title">L5-3019 — Valve Preparation & Alignment</div>
+                      <div style="font-size: 11px; color: var(--text-muted);">Mechanical Discipline • WBS 1.3.1</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <span class="badge badge-amber">42% Match</span>
+                      <a href="activity.html" class="btn btn-secondary btn-sm">Select Match</a>
+                      <button class="btn btn-secondary btn-sm" style="color: var(--status-red);">Reject</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 2: CONFLICTS -->
+            <div id="panel2" class="tab-content-panel">
+              <div class="conflict-warning-card">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <h3 style="font-size: 16px; font-weight: 900; color: #991B1B; display: flex; align-items: center; gap: 8px;">
+                    🚨 Progress Conflict Detected
+                  </h3>
+                  <span class="badge badge-red">Critical Variance Conflict</span>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #fff; padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--status-red-border); margin-bottom: 16px;">
+                  <div>
+                    <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">CURRENT SCHEDULE RECORD</div>
+                    <div style="font-size: 20px; font-weight: 900; color: var(--status-green);">100% Completed</div>
+                    <div style="font-size: 12px; font-weight: 700; color: var(--oil-navy);">L5-2041 Foundation Construction</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">LATEST SITE REPORT EVIDENCE</div>
+                    <div style="font-size: 20px; font-weight: 900; color: var(--status-red);">60% In Progress</div>
+                    <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">DPR 06 Sep: "Foundation rebar work re-opened for inspection."</div>
+                  </div>
+                </div>
+
+                <p style="font-size: 13px; color: #7F1D1D; margin-bottom: 16px; font-weight: 600;">
+                  The latest site information conflicts with the current schedule progress. Schedule indicates 100% completion while field site report indicates active rebar rework.
+                </p>
+
+                <div style="display: flex; gap: 12px;">
+                  <a href="activity.html" class="btn btn-primary" style="background: #991B1B; border-color: #7F1D1D;">
+                    🔍 Investigate Conflict
+                  </a>
+                  <a href="activity.html" class="btn btn-secondary">
+                    📊 Compare Evidence Documents
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- PANEL 3: UNMATCHED -->
+            <div id="panel3" class="tab-content-panel">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">❓ Unmatched Field Report Entry</h3>
+                  <span class="badge badge-amber">No WBS Link</span>
+                </div>
+
+                <div style="background-color: var(--bg-card-alt); border-left: 3px solid var(--text-muted); padding: 16px; border-radius: var(--radius-sm); margin-bottom: 20px;">
+                  <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">SITE UPDATE</div>
+                  <p style="font-size: 15px; font-weight: 800; color: var(--oil-navy-dark); margin-top: 4px;">
+                    "Temporary access road completed near Unit 3."
+                  </p>
+                </div>
+
+                <div style="background: #FEF3C7; border: 1px solid #FDE68A; padding: 14px; border-radius: var(--radius-md); font-size: 12px; color: #92400E; margin-bottom: 20px;">
+                  <strong>AI Engine Result:</strong> No reliable L5/L6 activity found in current Primavera P6 baseline schedule matching "Temporary access road near Unit 3".
+                </div>
+
+                <div style="display: flex; gap: 12px;">
+                  <a href="activity.html" class="btn btn-gold">
+                    ✉️ Send to Lead Planner
+                  </a>
+                  <button class="btn btn-secondary">
+                    ➕ Create New Schedule Activity (VO)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

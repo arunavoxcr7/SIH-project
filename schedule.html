@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Schedule & Gantt — OIL Intelligent Progress Bridge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FLOATING AI ASSISTANT OVERLAY (CSS-ONLY) -->
+  <input type="checkbox" id="ai-drawer-toggle" class="ai-drawer-toggle-input">
+  <label for="ai-drawer-toggle" class="floating-ai-btn">
+    <span class="ai-pulse-dot"></span>
+    Ask Project AI
+  </label>
+  
+  <div class="ai-side-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Ask Project AI (Prototype)</div>
+      <label for="ai-drawer-toggle" class="close-drawer-label">✕</label>
+    </div>
+    <div class="drawer-body">
+      <div class="badge badge-gold" style="align-self: center; margin-bottom: 10px;">Prototype AI Interface</div>
+      <div class="chat-bubble chat-user">What activities are delayed?</div>
+      <div class="chat-bubble chat-ai">
+        <strong>Project AI Assistant:</strong><br>
+        27 activities are currently delayed. 8 are marked critical. <strong>Piping</strong> has the highest number of delayed activities in Area A.
+      </div>
+      <div class="chat-bubble chat-user">Show schedule variance for Pipeline Line 24 welding.</div>
+      <div class="chat-bubble chat-ai">
+        Activity <strong>L6-1024</strong> completed on 06 Sep 2026 with a variance of <strong>+1 Day</strong> due to NDT inspection queuing.
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <div class="brand-wrapper">
+          <img src="assets/oil-logo.svg" alt="Oil India Limited" class="brand-logo-img">
+        </div>
+        <div class="sih-badge">SIH 2026 Prototype</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-title">Main Control</div>
+        <a href="dashboard.html" class="nav-link">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="site-input.html" class="nav-link">
+          <span class="nav-icon">✏️</span> Site Input
+        </a>
+        <a href="ai-matching.html" class="nav-link">
+          <span class="nav-icon">⚡</span> AI Matching
+        </a>
+        <a href="schedule.html" class="nav-link active">
+          <span class="nav-icon">📅</span> Schedule
+        </a>
+        <a href="activity.html" class="nav-link">
+          <span class="nav-icon">🔍</span> Activities
+        </a>
+
+        <div class="nav-group-title" style="margin-top: 16px;">Governance & Analysis</div>
+        <a href="review.html" class="nav-link">
+          <span class="nav-icon">⚠️</span> Review Center
+          <span class="nav-count-badge">3</span>
+        </a>
+        <a href="analytics.html" class="nav-link">
+          <span class="nav-icon">📈</span> Analytics
+        </a>
+        <a href="memory.html" class="nav-link">
+          <span class="nav-icon">🧠</span> Project Memory
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">PE</div>
+          <div class="user-info">
+            <span class="user-name">Planning Engineer</span>
+            <span class="user-role">Primavera P6 Administrator</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <h1 class="page-title">Project Schedule & Gantt</h1>
+          <div class="project-context-pill">
+            Primavera P6 L5/L6 Schedule View | Baseline Rev 4.2
+          </div>
+        </div>
+        <div class="header-right">
+          <span class="header-badge badge-synthetic">SYNTHETIC DEMO DATA</span>
+          <span class="header-badge badge-problem">SIH26122</span>
+        </div>
+      </header>
+
+      <div class="content-container">
+
+        <!-- SCHEDULE CONTROLS & FILTER BAR -->
+        <div class="schedule-controls-bar">
+          <div class="filter-group">
+            <input type="text" class="search-input" placeholder="Search activities..." value="Pipeline Line 24">
+            <select class="filter-select">
+              <option>Discipline: All</option>
+              <option selected>Piping</option>
+              <option>Civil</option>
+              <option>Mechanical</option>
+            </select>
+            <select class="filter-select">
+              <option>WBS: All</option>
+              <option selected>WBS 1.2 — Pipeline Construction</option>
+              <option>WBS 1.5 — Substation</option>
+            </select>
+            <select class="filter-select">
+              <option>Status: All</option>
+              <option>Completed</option>
+              <option>Delayed</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label style="font-size: 12px; font-weight: 700; color: var(--oil-navy); display: flex; align-items: center; gap: 6px;">
+              <input type="checkbox" checked> Critical Path Only
+            </label>
+            <div style="font-size: 12px; font-weight: 700; color: var(--text-muted);">
+              Range: <strong>01 Sep – 09 Sep 2026</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACTIVITY TABLE -->
+        <div class="card" style="padding: 0; overflow: hidden; margin-bottom: 24px;">
+          <table class="enterprise-table">
+            <thead>
+              <tr>
+                <th>ACTIVITY ID</th>
+                <th>ACTIVITY NAME</th>
+                <th>DISCIPLINE</th>
+                <th>PLANNED START</th>
+                <th>PLANNED FINISH</th>
+                <th>ACTUAL START</th>
+                <th>ACTUAL FINISH</th>
+                <th>PROGRESS</th>
+                <th>STATUS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong style="font-family: monospace;">L5-1001</strong></td>
+                <td>Site Preparation & Grading</td>
+                <td>Civil</td>
+                <td>25 Aug 2026</td>
+                <td>31 Aug 2026</td>
+                <td>25 Aug 2026</td>
+                <td>31 Aug 2026</td>
+                <td><strong>100%</strong></td>
+                <td><span class="badge badge-green">Completed</span></td>
+              </tr>
+              <tr style="background: rgba(245, 158, 11, 0.05);">
+                <td><a href="activity.html" style="font-family: monospace; font-weight: 900; color: var(--oil-navy);">L6-1024</a></td>
+                <td><strong>Welding of Pipeline Line 24</strong></td>
+                <td>Piping</td>
+                <td>01 Sep 2026</td>
+                <td>05 Sep 2026</td>
+                <td>02 Sep 2026</td>
+                <td>06 Sep 2026</td>
+                <td><strong>100%</strong></td>
+                <td><span class="badge badge-amber">Delayed (+1d)</span></td>
+              </tr>
+              <tr>
+                <td><strong style="font-family: monospace;">L6-1030</strong></td>
+                <td>Pipeline Line 24 NDT Inspection</td>
+                <td>Quality</td>
+                <td>06 Sep 2026</td>
+                <td>07 Sep 2026</td>
+                <td>07 Sep 2026</td>
+                <td>-</td>
+                <td><strong>40%</strong></td>
+                <td><span class="badge badge-blue">In Progress</span></td>
+              </tr>
+              <tr>
+                <td><strong style="font-family: monospace;">L6-1088</strong></td>
+                <td>Hydro Testing Area A</td>
+                <td>Piping</td>
+                <td>05 Sep 2026</td>
+                <td>08 Sep 2026</td>
+                <td>06 Sep 2026</td>
+                <td>-</td>
+                <td><strong>72%</strong></td>
+                <td><span class="badge badge-red">At Risk (+2d)</span></td>
+              </tr>
+              <tr>
+                <td><strong style="font-family: monospace;">L5-2041</strong></td>
+                <td>Foundation Construction Area B</td>
+                <td>Civil</td>
+                <td>02 Sep 2026</td>
+                <td>08 Sep 2026</td>
+                <td>02 Sep 2026</td>
+                <td>-</td>
+                <td><strong>85%</strong></td>
+                <td><span class="badge badge-green">On Track</span></td>
+              </tr>
+              <tr>
+                <td><strong style="font-family: monospace;">L6-3021</strong></td>
+                <td>Valve Installation Unit 3</td>
+                <td>Mechanical</td>
+                <td>04 Sep 2026</td>
+                <td>09 Sep 2026</td>
+                <td>05 Sep 2026</td>
+                <td>-</td>
+                <td><strong>60%</strong></td>
+                <td><span class="badge badge-amber">Review Req.</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- PRIMAVERA P6-STYLE GANTT CHART -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">📅 Interactive Primavera P6 Timeline & Gantt Visual</h3>
+              <div class="card-subtitle">Visual timeline comparison of Planned vs Actual Site Execution</div>
+            </div>
+            <div class="css-chart-legend">
+              <div class="legend-item"><span class="legend-color gantt-bar-planned"></span> Planned Schedule</div>
+              <div class="legend-item"><span class="legend-color gantt-bar-actual"></span> Actual Completed</div>
+              <div class="legend-item"><span class="legend-color gantt-bar-amber"></span> Schedule Delay</div>
+              <div class="legend-item"><span class="legend-color gantt-bar-red"></span> Critical Path Risk</div>
+            </div>
+          </div>
+
+          <div class="gantt-wrapper">
+            <div class="gantt-grid">
+              
+              <!-- GANTT HEADER -->
+              <div class="gantt-header-row">
+                <div class="gantt-cell cell-activity">ACTIVITY (WBS L5/L6)</div>
+                <div class="gantt-cell">01 SEP</div>
+                <div class="gantt-cell">02 SEP</div>
+                <div class="gantt-cell">03 SEP</div>
+                <div class="gantt-cell">04 SEP</div>
+                <div class="gantt-cell">05 SEP</div>
+                <div class="gantt-cell" style="background: rgba(245,158,11,0.2); color: var(--oil-gold-bright);">06 SEP ★</div>
+                <div class="gantt-cell">07 SEP</div>
+                <div class="gantt-cell">08 SEP</div>
+                <div class="gantt-cell">09 SEP</div>
+              </div>
+
+              <!-- ROW 1: Site Prep -->
+              <div class="gantt-body-row">
+                <div class="activity-info">
+                  <span class="act-code">L5-1001</span>
+                  <span class="act-name">Site Preparation</span>
+                </div>
+                <div class="gantt-track-area">
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-bar-item gantt-bar-actual" style="left: 0%; width: 22%;">✓ 100% Done</div>
+                </div>
+              </div>
+
+              <!-- ROW 2: Pipeline Line 24 Welding -->
+              <div class="gantt-body-row">
+                <div class="activity-info">
+                  <span class="act-code" style="color: var(--oil-gold);">L6-1024</span>
+                  <span class="act-name">Pipeline Line 24 Welding</span>
+                </div>
+                <div class="gantt-track-area">
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <!-- Planned Bar -->
+                  <div class="gantt-bar-item gantt-bar-planned" style="left: 0%; width: 55%; top: 6px; height: 12px; opacity: 0.6;">Planned</div>
+                  <!-- Actual Bar -->
+                  <div class="gantt-bar-item gantt-bar-actual" style="left: 11%; width: 55%; bottom: 6px; height: 14px;">Actual (+1d)</div>
+                </div>
+              </div>
+
+              <!-- ROW 3: NDT Inspection -->
+              <div class="gantt-body-row">
+                <div class="activity-info">
+                  <span class="act-code">L6-1030</span>
+                  <span class="act-name">Pipeline NDT Inspection</span>
+                </div>
+                <div class="gantt-track-area">
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-bar-item gantt-bar-planned" style="left: 55%; width: 22%;">40% Active</div>
+                </div>
+              </div>
+
+              <!-- ROW 4: Hydro Testing -->
+              <div class="gantt-body-row">
+                <div class="activity-info">
+                  <span class="act-code">L6-1088</span>
+                  <span class="act-name">Hydro Testing Area A</span>
+                </div>
+                <div class="gantt-track-area">
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-bar-item gantt-bar-red" style="left: 44%; width: 44%;">⚠️ 72% At Risk</div>
+                </div>
+              </div>
+
+              <!-- ROW 5: Foundation Construction -->
+              <div class="gantt-body-row">
+                <div class="activity-info">
+                  <span class="act-code">L5-2041</span>
+                  <span class="act-name">Foundation Construction Area B</span>
+                </div>
+                <div class="gantt-track-area">
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-bar-item gantt-bar-actual" style="left: 11%; width: 77%;">85% On Track</div>
+                </div>
+              </div>
+
+              <!-- ROW 6: Valve Installation -->
+              <div class="gantt-body-row">
+                <div class="activity-info">
+                  <span class="act-code">L6-3021</span>
+                  <span class="act-name">Valve Installation Unit 3</span>
+                </div>
+                <div class="gantt-track-area">
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-grid-col"></div><div class="gantt-grid-col"></div><div class="gantt-grid-col"></div>
+                  <div class="gantt-bar-item gantt-bar-amber" style="left: 33%; width: 55%;">60% Review Req.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

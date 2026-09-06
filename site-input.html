@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capture Site Progress — OIL Intelligent Progress Bridge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FLOATING AI ASSISTANT OVERLAY (CSS-ONLY) -->
+  <input type="checkbox" id="ai-drawer-toggle" class="ai-drawer-toggle-input">
+  <label for="ai-drawer-toggle" class="floating-ai-btn">
+    <span class="ai-pulse-dot"></span>
+    Ask Project AI
+  </label>
+  
+  <div class="ai-side-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Ask Project AI (Prototype)</div>
+      <label for="ai-drawer-toggle" class="close-drawer-label">✕</label>
+    </div>
+    <div class="drawer-body">
+      <div class="badge badge-gold" style="align-self: center; margin-bottom: 10px;">Prototype AI Interface</div>
+      <div class="chat-bubble chat-user">What activities are delayed?</div>
+      <div class="chat-bubble chat-ai">
+        <strong>Project AI Assistant:</strong><br>
+        27 activities are currently delayed. 8 are marked critical. <strong>Piping</strong> has the highest number of delayed activities in Area A.
+      </div>
+      <div class="chat-bubble chat-user">Show schedule variance for Pipeline Line 24 welding.</div>
+      <div class="chat-bubble chat-ai">
+        Activity <strong>L6-1024</strong> completed on 06 Sep 2026 with a variance of <strong>+1 Day</strong> due to NDT inspection queuing.
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <div class="brand-wrapper">
+          <img src="assets/oil-logo.svg" alt="Oil India Limited" class="brand-logo-img">
+        </div>
+        <div class="sih-badge">SIH 2026 Prototype</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-title">Main Control</div>
+        <a href="dashboard.html" class="nav-link">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="site-input.html" class="nav-link active">
+          <span class="nav-icon">✏️</span> Site Input
+        </a>
+        <a href="ai-matching.html" class="nav-link">
+          <span class="nav-icon">⚡</span> AI Matching
+        </a>
+        <a href="schedule.html" class="nav-link">
+          <span class="nav-icon">📅</span> Schedule
+        </a>
+        <a href="activity.html" class="nav-link">
+          <span class="nav-icon">🔍</span> Activities
+        </a>
+
+        <div class="nav-group-title" style="margin-top: 16px;">Governance & Analysis</div>
+        <a href="review.html" class="nav-link">
+          <span class="nav-icon">⚠️</span> Review Center
+          <span class="nav-count-badge">3</span>
+        </a>
+        <a href="analytics.html" class="nav-link">
+          <span class="nav-icon">📈</span> Analytics
+        </a>
+        <a href="memory.html" class="nav-link">
+          <span class="nav-icon">🧠</span> Project Memory
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="user-avatar">SE</div>
+          <div class="user-info">
+            <span class="user-name">Site Engineer</span>
+            <span class="user-role">Area A • Pipeline Line 24</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <h1 class="page-title">Capture Site Progress</h1>
+          <div class="project-context-pill">
+            Convert field updates into structured project information
+          </div>
+        </div>
+        <div class="header-right">
+          <span class="header-badge badge-synthetic">SYNTHETIC DEMO DATA</span>
+          <span class="header-badge badge-problem">SIH26122</span>
+        </div>
+      </header>
+
+      <div class="content-container">
+
+        <!-- THREE INPUT CARDS GRID -->
+        <div class="input-options-grid">
+          
+          <!-- CARD 1: DAILY REPORT -->
+          <div class="input-card">
+            <div class="input-card-title">
+              📄 DAILY PROGRESS REPORT (DPR)
+            </div>
+            <div class="upload-dropzone">
+              <div class="drop-icon">📤</div>
+              <div class="drop-text">Drop Daily Progress Report Here</div>
+              <div class="drop-subtext">Supported Formats: PDF | Excel (.xlsx) | CSV</div>
+            </div>
+            <a href="ai-matching.html" class="btn btn-primary" style="margin-top: auto;">
+              Upload & Process Report
+            </a>
+          </div>
+
+          <!-- CARD 2: TEXT UPDATE -->
+          <div class="input-card">
+            <div class="input-card-title">
+              💬 DIRECT TEXT UPDATE
+            </div>
+            <textarea class="static-textarea" readonly>Pipeline Line 24 welding completed today. Hydro testing will start tomorrow.</textarea>
+            <a href="ai-matching.html" class="btn btn-gold" style="margin-top: auto;">
+              ⚡ Analyze Site Update
+            </a>
+          </div>
+
+          <!-- CARD 3: VOICE UPDATE -->
+          <div class="input-card">
+            <div class="input-card-title" style="justify-content: space-between;">
+              <span>🎙️ VOICE PROGRESS UPDATE</span>
+              <span class="badge badge-gold">Prototype</span>
+            </div>
+            <div class="voice-card-body">
+              <div class="mic-circle">🎙️</div>
+              <div style="font-weight: 700; color: var(--oil-navy); font-size: 13px;">Voice Progress Recording</div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">
+                Capture supervisor updates directly from the field via natural speech.
+              </div>
+            </div>
+            <a href="ai-matching.html" class="btn btn-secondary" style="margin-top: auto;">
+              Simulate Voice Transcription
+            </a>
+          </div>
+
+        </div>
+
+        <!-- STATIC AI PROCESSING PIPELINE VISUAL -->
+        <div class="pipeline-visual-container">
+          <div class="pipeline-header">
+            <div>
+              <div class="pipeline-title">⚡ REAL-TIME AI PROCESSING PIPELINE</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.7);">Automated site report ingestion to Primavera L5/L6 activity linkage workflow</div>
+            </div>
+            <span class="badge badge-green">Pipeline Operational</span>
+          </div>
+
+          <div class="pipeline-flow" style="padding: 20px 0;">
+            <div class="pipeline-step">
+              <div class="step-node active">✓</div>
+              <div class="step-title">Report Received</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">Text / PDF / Voice</div>
+            </div>
+            <div class="step-connector"></div>
+            
+            <div class="pipeline-step">
+              <div class="step-node active">✓</div>
+              <div class="step-title">Information Extracted</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">NLP Entity Parsing</div>
+            </div>
+            <div class="step-connector"></div>
+
+            <div class="pipeline-step">
+              <div class="step-node active">3</div>
+              <div class="step-title">Activity Identified</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">Location & Discipline</div>
+            </div>
+            <div class="step-connector"></div>
+
+            <div class="pipeline-step">
+              <div class="step-node">4</div>
+              <div class="step-title">Schedule Checked</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">WBS L5/L6 Verification</div>
+            </div>
+            <div class="step-connector"></div>
+
+            <div class="pipeline-step">
+              <div class="step-node">5</div>
+              <div class="step-title">Best Match Found</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,0.6); margin-top: 4px;">Confidence Scoring</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
